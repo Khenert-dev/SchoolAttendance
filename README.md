@@ -1,4 +1,4 @@
-KCP Attendance System
+KCP Attendance System (View in code mode for better readability)
 
 A fast, simple, and reliable attendance tracking system built with Flask and SQLite.
 
