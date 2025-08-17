@@ -203,6 +203,7 @@ def students():
     c.execute("SELECT id, name, student_id FROM students ORDER BY name ASC")
     students_data = c.fetchall()
     conn.close()
+    # Make sure the variable name matches the template
     return render_template("students.html", students=students_data)
 
 # Delete student
@@ -227,6 +228,20 @@ def delete_all_students():
     conn.commit()
     conn.close()
     return redirect(url_for("students"))
+@app.route("/delete_selected_students", methods=["POST"])
+def delete_selected_students():
+    selected = request.form.getlist("selected_students")  # list of IDs
+    if selected:
+        conn = sqlite3.connect(DB_NAME)
+        c = conn.cursor()
+        # Delete attendance first
+        c.executemany("DELETE FROM attendance WHERE student_id=?", [(s,) for s in selected])
+        # Delete students
+        c.executemany("DELETE FROM students WHERE id=?", [(s,) for s in selected])
+        conn.commit()
+        conn.close()
+    return redirect(url_for("students"))
+
 
 
 # -----------------------
