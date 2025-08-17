@@ -1,78 +1,97 @@
-KCP Attendance System (View in code mode for better readability)
+KCP Attendance System
 
 A fast, simple, and reliable attendance tracking system built with Flask and SQLite.
 
 1. Features
 
-✅ Register students manually or import from CSV
+Register students manually or import from CSV
 
-✅ Mark attendance for events
+Mark attendance for events
 
-✅ View attendance records
+View attendance records
 
-✅ View all registered students
+View all registered students
 
-✅ Delete individual students or all students
+Delete individual students or all students
 
-✅ Export attendance backup as CSV
+Export attendance backup as CSV
 
 2. Directory Setup
 
-Make sure your project folder looks like this. Do not move files outside this structure, or Flask may fail to locate templates and static files:
+Keep the project folder structure intact. Do not move files outside this structure, or Flask may fail to locate templates and static files:
 
 KCP-Attendance/
-├─ app.py # Main Flask application
-├─ attendance.db # SQLite database (created automatically)
-├─ attendance_backup.csv # Backup CSV file (generated automatically)
-├─ templates/ # HTML templates
-│ ├─ index.html
-│ ├─ register.html
-│ ├─ attendance.html
-│ ├─ records.html
-│ ├─ students.html
-│ └─ import.html
-├─ static/ # CSS, JS, images
-│ └─ style.css
-└─ README.md # Instructions file
+├─ app.py                  # Main Flask application
+├─ attendance.db           # SQLite database (created automatically)
+├─ attendance_backup.csv   # Backup CSV file (generated automatically)
+├─ templates/              # HTML templates
+│  ├─ index.html
+│  ├─ register.html
+│  ├─ attendance.html
+│  ├─ records.html
+│  ├─ students.html
+│  └─ import.html
+├─ static/                 # CSS, JS, images
+│  └─ style.css
+└─ README.md               # Instructions file
 
-Important: If you move files or folders, Flask may not find templates or static files, causing errors.
 
-3. How to Run
+Important: Moving files or folders may cause errors.
 
-Clone or download the repository. Keep the folder structure intact.
+3. Requirements
 
-Install Python and Flask. Make sure Python 3.x is installed. In a terminal, run:
+Python 3.x
+
+Flask
+
+SQLite (built-in with Python)
+
+Install Flask using pip:
+
 pip install flask
 
-Start the app. Open a terminal inside the KCP-Attendance folder and run:
+
+If your environment is externally managed, use a virtual environment:
+
+python3 -m venv venv
+source venv/bin/activate
+pip install flask
+
+4. How to Run
+
+Open a terminal inside the KCP-Attendance folder
+
+Run the app:
+
 python app.py
-Then open your browser and go to:
-http://127.0.0.1:5000/
 
-4. Using the System
 
-Register Student: Add new students manually.
+Open your browser and go to: http://127.0.0.1:5000/
 
-Mark Attendance: Enter student ID and event to record attendance.
+5. Using the System
 
-View Records: See all attendance records.
+Register Student: Add new students manually
 
-View Registered Students: Search, delete individual students, or delete all.
+Mark Attendance: Enter student ID and event to record attendance
 
-Import Students: Upload a CSV file with Name,Student_ID columns.
+View Records: See all attendance records
 
-Export Backup: Download the attendance backup CSV.
+View Registered Students: Search, delete individual students, or delete all
 
-5. Reset Database
+Import Students: Upload a CSV file with Name,Student_ID columns
 
-To reset, delete attendance.db.
+Export Backup: Download the attendance backup CSV
 
-When you rerun the app, the database will be recreated automatically.
+6. Reset Database
 
-6. Notes
+Delete attendance.db to reset the database
 
-🔒 Keep attendance.db private; do not push it to GitHub.
+When you rerun the app, the database will be recreated automatically
 
-Use a .gitignore file to ignore attendance.db and other sensitive files.
+7. Notes
 
-Always keep the folder structure intact to avoid errors.
+Keep attendance.db private; do not push it to GitHub
+
+Use a .gitignore file to ignore sensitive files: attendance.db, attendance_backup.csv, venv/
+
+Always keep the folder structure intact to avoid errors
