@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Student</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Register a New Student</h1>
+    </div>
+
+    <div class="form-container">
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <form method="POST">
+            <input type="text" name="name" placeholder="Student Name" required>
+            <input type="text" name="student_id" placeholder="Student ID" required>
+            <button type="submit">Register</button>
+        </form>
+        <a class="back-btn" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>System designed by Khenert Catayao © 2025</p>
+       
+    </footer>
+
+</body>
+</html>

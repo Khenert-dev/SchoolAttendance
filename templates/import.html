@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Import Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Import Students from CSV</h1>
+    </div>
+
+    <div class="form-container">
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept=".csv" required>
+            <button type="submit">Import</button>
+        </form>
+        <a class="back-btn" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>System designed by Khenert Catayao © 2025</p>
+        
+    </footer>
+
+</body>
+</html>

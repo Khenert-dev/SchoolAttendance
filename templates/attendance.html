@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Attendance</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Mark Student Attendance</h1>
+        <p>Enter the student ID and the event name to record attendance.</p>
+    </div>
+
+    <div class="form-container">
+        {% if message %}
+            <p class="message {{ 'success' if 'recorded' in message else 'error' }}">{{ message }}</p>
+        {% endif %}
+        <form method="POST">
+            <input type="text" name="student_id" placeholder="Student ID" required>
+            <input type="text" name="event" placeholder="Event Name" required>
+            <button type="submit">Mark Attendance</button>
+        </form>
+        <a class="back-btn" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+
+    <footer>
+        <p>System designed by Khenert Catayao © 2025</p>
+    </footer>
+
+</body>
+</html>

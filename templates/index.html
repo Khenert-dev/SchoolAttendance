@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="hero">
+        <h1>Welcome to the KCP Attendance System</h1>
+        <p>Fast, simple, and reliable attendance tracking</p>
+    </div>
+
+    <div class="grid-container">
+        <div class="card"><a href="{{ url_for('register') }}">Register Student</a></div>
+        <div class="card"><a href="{{ url_for('attendance') }}">Mark Attendance</a></div>
+        <div class="card"><a href="{{ url_for('records') }}">View Records</a></div>
+        <div class="card"><a href="{{ url_for('import_students') }}">Import Students</a></div>
+        <div class="card"><a href="{{ url_for('export_attendance') }}">Export Backup</a></div>
+        <div class="card"><a href="{{ url_for('students') }}">View Registered Students</a></div>
+    </div>
+
+    <footer>
+        <p>System designed by Khenert Catayao © 2025</p>
+        <p><a href="https://www.facebook.com/khenert.catayao" target="_blank">Facebook</a></p>
+    </footer>
+
+</body>
+</html>
